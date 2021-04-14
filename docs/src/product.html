@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../build/css/reset.css">
-  <link rel="stylesheet" href="../build/css/product.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <title>Document</title>
-</head>
-<body>
-  <header class="header">
-    <h1 class="header__title">Orinolens</h1>
-    <a class="header__user" href="#">
-        <i class="header__user__avatar far fa-user"></i>
-    </a>
-  </header>
-  <main>
-
-  </main>
-  <footer class="footer">
-    <label class="footer__navigation" for="home">
-        <input class="footer__navigation__input" type="radio" id="home" value="home" name="footer--menu" checked>
-        <i class="footer__navigation__icon fas fa-home"></i>
-    </label>
-    <label class="footer__navigation" for="settings">
-        <input class="footer__navigation__input" type="radio" id="settings" name="footer--menu" value="settings">
-        <i class="footer__navigation__icon fas fa-cog"></i>
-    </label>
-    <label class="footer__navigation" for="help">
-        <input class="footer__navigation__input" type="radio" id="help" name="footer--menu" value="help">
-        <i class="footer__navigation__icon fas fa-comment-alt"></i>
-    </label>
-    <label class="footer__navigation" for="cart">
-        <input class="footer__navigation__input" type="radio" id="cart" name="footer--menu" value="cart">
-        <i class="footer__navigation__icon fas fa-shopping-cart"></i>
-    </label>
-</footer>
-  <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
-  <script src="../build/js/product.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/css/reset.css">
+    <link rel="stylesheet" href="../build/css/product.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__user header__user--back" href="../../index.html">
+        <i class="header__user__icon fas fa-caret-left"></i>
+      </a>
+      <h1 class="header__title">Orinolens</h1>
+      <a class="header__user header__user--avatar" href="#">
+          <i class="header__user__icon far fa-user"></i>
+      </a>
+    </header>
+    <main>
+      <div class="product" id="product">
+        
+      </div>
+    </main>
+    <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
+    <script src="../build/js/product.js"></script>
+  </body>
 </html>

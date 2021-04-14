@@ -1,14 +1,28 @@
 .header {
   position: relative;
-  margin: 2rem 0 1.5rem 0;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
 }
 .header__title {
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
 }
-.header__user__avatar {
+.header__user {
   position: absolute;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__user--avatar {
   font-size: 1.2rem;
   right: 0;
-  top: -.2rem;
+  top: 1.3rem;
+}
+.header__user--back {
+  left: 0;
+  top: 1.5rem;
 }
