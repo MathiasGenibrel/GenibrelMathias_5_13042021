@@ -1,0 +1,14 @@
+.header {
+  position: relative;
+  margin: 2rem 0 1.5rem 0;
+}
+.header__title {
+  font-weight: 600;
+  text-align: center;
+}
+.header__user__avatar {
+  position: absolute;
+  font-size: 1.2rem;
+  right: 0;
+  top: -.2rem;
+}

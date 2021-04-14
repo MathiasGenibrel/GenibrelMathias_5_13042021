@@ -1,0 +1,12 @@
+:root {
+  --gradient : linear-gradient(90deg, rgba(221,193,192,1) 0%, rgba(239,212,209,1) 50%, rgba(199,188,214,1) 100%);
+  --sideBorder: 2rem;
+  --iconBackground: .35rem;
+}
+
+body {
+  background-color: #171720;
+  color: white;
+  font-family: 'Raleway';
+  padding: 0 var(--sideBorder) calc(var(--sideBorder) * 2) var(--sideBorder);
+}

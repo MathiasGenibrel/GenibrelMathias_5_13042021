@@ -1,0 +1,26 @@
+.footer {
+  position: fixed;
+  background-color: #171720;
+  display: flex;
+  justify-content: space-between;
+  padding-top: calc(var(--sideBorder) / 2.5);
+  z-index: 999;
+  height: calc(var(--iconBackground) + var(--sideBorder));
+  width: calc(100% - var(--sideBorder) * 2);
+  bottom: 0;
+  color: #58575e;
+}
+.footer__navigation__input {
+  appearance: none;
+}
+.footer__navigation__icon {
+  padding: var(--iconBackground);
+  border-radius: 50%;
+}
+
+.footer__navigation__input:checked + .footer__navigation__icon {
+  color: #171720;
+  box-shadow: 0 0 1rem 0 rgb(221,193,192,.6);
+  background: var(--gradient);
+  transition: .2s;
+}
