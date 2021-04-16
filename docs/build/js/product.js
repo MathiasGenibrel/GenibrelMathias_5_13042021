@@ -1,35 +1,28 @@
-//Retrieving information from the url after "?"
-
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-
-//Global variable
-
-const cameraProduct = document.getElementById("product");
-let camera;
-
-console.log(productId)
-
-if (productId === null) {
-  window.location.replace("../../index.html");
-}
-
-const getCameraProduct = async () => {
-  camera = await fetch(
-    "http://localhost:3000/api/cameras/" + productId
-  ).then((res) => res.json());
-  console.log(camera)
-};
-
 const ratingProduct = (rating => {
   rating = Number.parseFloat((Math.random() * 5).toFixed(1));
   return rating;
 })
 
-const showCameraProduct = async () => {
-  await getCameraProduct();
+const getCameraProduct = async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get('id');
 
-  document.title = camera.name;
+  if (productId === null) {
+    window.location.replace("../../index.html");
+  }
+  response = await fetch(
+    `http://localhost:3000/api/cameras/${productId}`
+  );
+  
+  return response.json();
+};
+
+const showCameraProduct = async (camera) => {
+  camera = await camera;
+
+  document.title += ` ${camera.name}`;
+
+  const cameraProduct = document.querySelector("#product");
 
   cameraProduct.innerHTML = 
     `
@@ -60,10 +53,12 @@ const showCameraProduct = async () => {
           <i class="product__sheet__shopping__add-cart__icon fas fa-shopping-cart"></i>
         </a>
         <a class="product__sheet__shopping__buy" href="">
-          <p class="product__sheet__shopping__buy__text">Buy</p>
+          <p class="product__sheet__shopping__buy__text">Acheter</p>
         </a>
       </div>
     </div>
     `
 }
-showCameraProduct();
+(async () => {
+  await showCameraProduct(await getCameraProduct());
+})();
