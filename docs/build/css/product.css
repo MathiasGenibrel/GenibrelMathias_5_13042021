@@ -46,6 +46,23 @@ body {
   min-height: 17rem;
   height: 50%;
 }
+.product__sheet__name-id__lenses {
+  background: var(--gradient);
+  box-shadow: 0 0.2rem .5rem 0 rgb(221,193,192,.6);
+  text-align-last: center;
+  padding: .7rem .5rem .7rem .5rem;
+  font-weight: 600;
+  font-size: .7rem;
+  border-radius: 1.4rem;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  appearance: none;
+  width: 6rem;
+  position: absolute;
+  right: var(--sideBorder);
+}
 .product__sheet__name-id__title {
   font-weight: 600;
   font-size: 1.1rem;
@@ -53,7 +70,7 @@ body {
 }
 .product__sheet__name-id__subtitle {
   font-weight: 600;
-  font-size: .7rem;
+  font-size: .6rem;
   color: var(--third-color);
 }
 .product__sheet__desc {
@@ -107,6 +124,11 @@ body {
   color: var(--primary-color);
   font-size: .7rem;
   font-weight: 700;
+  outline: none;
+  border: none;
+}
+.product__sheet__shopping__add-cart:active {
+  transform: scale(.98);
 }
 .product__sheet__shopping__add-cart__text {
   margin-right: .8rem;
@@ -123,4 +145,9 @@ body {
   background: linear-gradient(0deg, rgba(244,161,24,1) 70%, rgba(253,185,83,1) 98%);
   font-size: .7rem;
   font-weight: 700;
+  outline: none;
+  border: none;
+}
+.product__sheet__shopping__buy:active {
+  transform: scale(.98);
 }

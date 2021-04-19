@@ -1,3 +1,115 @@
 @import "./root.css";
 @import './header.css';
 @import "./footer.css";
+
+.cart {
+  background-color: var(--card-color);
+  padding: calc(var(--sideBorder) / 2);
+  display: grid;
+  row-gap: 1rem;
+  border-radius: 1rem;
+}
+.cart__price {
+  font-size: .8rem;
+  color: var(--third-color);
+}
+.cart__price__total {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+.cart__btn {
+  border-radius: .8rem;
+  height: 3rem;
+  background: linear-gradient(0deg, rgba(244,161,24,1) 70%, rgba(253,185,83,1) 98%);
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  outline: none;
+}
+.cart__btn:active {
+  transform: scale(.98);
+  background: linear-gradient(0deg, rgba(200,161,24,1) 70%, rgba(230,185,83,1) 98%);
+}
+.cart__product__card {
+  background: var(--gradient);
+  box-shadow: 0 0.2rem .5rem 0 rgb(221,193,192,.6);
+  color: black;
+  padding: .75rem;
+  margin: var(--sideBorder) 0;
+  border-radius: .8rem;
+  display: grid;
+  row-gap: .75rem;
+}
+.cart__product__card:first-child {
+  margin-top: .5rem;
+}
+.cart__product__card__info {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: .75fr 1fr;
+}
+.cart__product__card__info__text {
+  font-weight: 600;
+}
+.cart__product__card__info__text__name {
+  height: 50%;
+  min-height: 2.2rem;
+  font-size: 1.1rem;
+}
+.cart__product__card__info__text__price {
+  font-size: .8rem;
+}
+.cart__product__card__info__img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.cart__product__card__quantity {
+  display: flex;
+}
+.cart__product__card__quantity__input {
+  width: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.cart__product__card__quantity__input__btn {
+  height: var(--sideBorder);
+  width: var(--sideBorder);
+  font-size: 1.1rem;
+  border: solid 1px var(--third-color);
+  outline: none;
+}
+.cart__product__card__quantity__input__btn:active {
+  transform: scale(.98);
+}
+.cart__product__card__quantity__input__btn--more {
+  border-radius: 0 .25rem .25rem 0;
+}
+.cart__product__card__quantity__input__btn--less {
+  border-radius: .25rem 0 0 .25rem;
+}
+.cart__product__card__quantity__input__text {
+  width: calc(100% - var(--sideBorder) * 2);
+  text-align: center;
+  border: solid 1px var(--third-color);
+  border-right: none;
+  border-left: none;
+  border-radius: 0;
+}
+.cart__product__card__quantity__delete {
+  margin: 0 auto;
+  background: linear-gradient(10deg, rgba(159,6,6,1) 39%, rgba(226,9,9,1) 100%);
+  border: none;
+  color: white;
+  font-size: .8rem;
+  font-weight: 600;
+  height: 100%;
+  width: 6rem;
+  border-radius: 1rem;
+  outline: none;
+}
+.cart__product__card__quantity__delete:active {
+  background: linear-gradient(10deg, rgba(180,6,6,1) 39%, rgba(240,9,9,1) 100%);
+  transform: scale(.98);
+}

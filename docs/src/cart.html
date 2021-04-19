@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../build/css/reset.css">
     <link rel="stylesheet" href="../build/css/cart.css">
+    <link rel="icon" href="./img/OrinoLens.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <title>Orinolens |</title>
+    <title>Orinolens | Panier</title>
   </head>
   <body>
     <header class="header">
@@ -21,49 +22,22 @@
     </header>
     <main>
       <div class="cart" id="cart">
-        <p class="cart__price">Sous-total (1 article) : 499€</p>
-        <button class="cart__btn">Passer commande</button>
         
-        <div class="cart__product">
-
-          <div class="car__product__card">
-            <div class="car__product__card__info">
-              <img class="car__product__card__info__img" src="../../images/vcam_3.jpg" alt="">
-              <div class="car__product__card__info__text">
-                <p class="car__product__card__info__text__name">Name</p>
-                <p class="car__product__card__info__text__price">Prix</p>
-              </div>
-            </div>
-            <div class="car__product__card__quantity">
-              <div class="car__product__card__quantity__input">
-                <button class="car__product__card__quantity__input__less">-</button>
-                <input class="car__product__card__quantity__input__text" type="text" value="1">
-                <button class="car__product__card__quantity__input__more">+</button>
-              </div>
-              <button class="car__product__card__quantity__delete">Supprimer</button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </main>
     <footer class="footer">
-      <label class="footer__navigation" for="home">
-          <input class="footer__navigation__input" type="radio" id="home" value="home" name="footer--menu">
-          <i class="footer__navigation__icon fas fa-home"></i>
-      </label>
-      <label class="footer__navigation" for="settings">
-          <input class="footer__navigation__input" type="radio" id="settings" value="settings" name="footer--menu">
-          <i class="footer__navigation__icon fas fa-cog"></i>
-      </label>
-      <label class="footer__navigation" for="help">
-          <input class="footer__navigation__input" type="radio" id="help" value="help" name="footer--menu">
-          <i class="footer__navigation__icon fas fa-comment-alt"></i>
-      </label>
-      <label class="footer__navigation" for="cart">
-          <input class="footer__navigation__input" type="radio" id="cart" value="cart" name="footer--menu" checked>
-          <i class="footer__navigation__icon fas fa-shopping-cart"></i>
-      </label>
+      <a class="footer__navigation" href="../../index.html">
+        <i class="footer__navigation__icon fas fa-home"></i>
+    </a>
+    <a class="footer__navigation" href="#">
+        <i class="footer__navigation__icon fas fa-cog"></i>
+    </a>
+    <a class="footer__navigation" href="#">
+        <i class="footer__navigation__icon fas fa-comment-alt"></i>
+    </a>
+    <a class="footer__navigation" href="./cart.html">
+        <i class="footer__navigation__icon footer__navigation__icon--checked fas fa-shopping-cart"></i>
+    </a>
   </footer>
     <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
     <script src="../build/js/cart.js"></script>

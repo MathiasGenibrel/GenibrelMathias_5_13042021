@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="docs/build/css/reset.css">
     <link rel="stylesheet" href="docs/build/css/index.css">
+    <link rel="icon" href="./docs/src/img/OrinoLens.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
     <title>Orinolens</title>
@@ -40,22 +41,18 @@
         </div>
     </main>
     <footer class="footer">
-        <label class="footer__navigation" for="home">
-            <input class="footer__navigation__input" type="radio" id="home" value="home" name="footer--menu" checked>
-            <i class="footer__navigation__icon fas fa-home"></i>
-        </label>
-        <label class="footer__navigation" for="settings">
-            <input class="footer__navigation__input" type="radio" id="settings" name="footer--menu" value="settings">
+        <a class="footer__navigation" href="./index.html">
+            <i class="footer__navigation__icon  footer__navigation__icon--checked fas fa-home"></i>
+        </a>
+        <a class="footer__navigation" href="#">
             <i class="footer__navigation__icon fas fa-cog"></i>
-        </label>
-        <label class="footer__navigation" for="help">
-            <input class="footer__navigation__input" type="radio" id="help" name="footer--menu" value="help">
+        </a>
+        <a class="footer__navigation" href="#">
             <i class="footer__navigation__icon fas fa-comment-alt"></i>
-        </label>
-        <label class="footer__navigation" for="cart">
-            <input class="footer__navigation__input" type="radio" id="cart" name="footer--menu" value="cart">
+        </a>
+        <a class="footer__navigation" href="./docs/src/cart.html">
             <i class="footer__navigation__icon fas fa-shopping-cart"></i>
-        </label>
+        </a>
     </footer>
     <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
     <script src="./docs/build/js/index.js"></script>

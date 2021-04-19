@@ -86,7 +86,7 @@
     row-gap: 1.5rem;
 }
 .camera__item__product {
-    background-color: #2d2d2f;
+    background-color: var(--card-color);
     box-shadow: -.02rem .04rem .05rem 0 rgb(221,193,192,.4) inset;
     padding: .8rem;
     box-sizing: border-box;

@@ -18,9 +18,8 @@
   border-radius: 50%;
 }
 
-.footer__navigation__input:checked + .footer__navigation__icon {
+.footer__navigation__icon--checked {
   color: #171720;
   box-shadow: 0 0 1rem 0 rgb(221,193,192,.6);
   background: var(--gradient);
-  transition: .2s;
 }
