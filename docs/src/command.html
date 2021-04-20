@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/css/reset.css">
+    <link rel="stylesheet" href="../build/css/command.css">
+    <link rel="icon" href="./img/OrinoLens.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Orinolens | Validation de la commande</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__user header__user--back" href="./cart.html">
+        <i class="header__user__icon fas fa-caret-left"></i>
+      </a>
+      <h1 class="header__title">Orinolens</h1>
+      <a class="header__user header__user--avatar" href="#">
+        <i class="header__user__icon far fa-user"></i>
+      </a>
+    </header>
+    <main>
+      <form class="form" id="form" name="userInput" onsubmit="submitInfo()" action="./order.html">
+        <label class="form__name" for="prenom">Prénom :</label>
+        <input class="form__input" id="prenom" type="text" pattern="[a-zA-Z]*" placeholder="Prénom" required>
+        <label class="form__name" for="nom">Nom :</label>
+        <input class="form__input" id="nom" type="text" pattern="[a-zA-Z]*" placeholder="Nom" required>
+        <label class="form__name" for="adress">Adresse :</label>
+        <input class="form__input" id="adress" type="text" placeholder="Adresse" required>
+        <label class="form__name" for="city">Ville :</label>
+        <input class="form__input" id="city" type="text" pattern="[a-zA-Z]*" placeholder="Ville" required>
+        <label class="form__name" for="email">Email :</label>
+        <input class="form__input" id="email" type="email" placeholder="exemple@gmail.com" required>
+        <button class="form__confirm" id="submit__btn" type="submit">Confirmer la commande</button>
+      </form>
+    </main>
+    <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
+    <script src="../build/js/command.js"></script>
+  </body>
+</html>

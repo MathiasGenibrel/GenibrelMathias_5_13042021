@@ -1,0 +1,36 @@
+@import "./root.css";
+@import './header.css';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+.form__name {
+  padding: 0 0 .5rem .7rem;
+}
+.form__input {
+  box-shadow: 0 0 .5rem 0 rgb(221,193,192,.6);
+  background: var(--gradient);
+  border-radius: 1.4rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+}
+.form__confirm {
+  margin-top: var(--sideBorder);
+  width: 100%;
+  padding: calc(var(--sideBorder) / 2);
+  background: linear-gradient(0deg, rgba(244,161,24,1) 70%, rgba(253,185,83,1) 98%);
+  font-size: .9rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 1.1rem;
+  outline: none;
+}
+.form__confirm:active {
+  transform: scale(.98);
+}

@@ -37,7 +37,7 @@ const displayProduct = () => {
     <p class="cart__price" id="cart__price">Sous-total (${totalQuantity()} article${addPluriel()}) :
       <span class="cart__price__total" id="cart__price__total">${totalPrice() + " €"}</span>
     </p>
-    <button class="cart__btn">Passer la commande</button>
+    <button class="cart__btn" onclick=window.location.href="./command.html">Passer la commande</button>
     
     <div class="cart__product" id="cart__product">
       
