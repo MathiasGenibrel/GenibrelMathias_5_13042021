@@ -58,14 +58,13 @@ const showCameraProduct = async (camera) => {
       </div>
     </div>
     `;
-    let cameraLens = document.querySelector("#product__sheet__name-id__lenses");
+  let cameraLens = document.querySelector("#product__sheet__name-id__lenses");
 
-    for (lense of camera.lenses) {
-      cameraLens.innerHTML += 
-      `
+  for (lense of camera.lenses) {
+    cameraLens.innerHTML += `
           <option>${lense}</option>
-      `
-    }
+      `;
+  }
 };
 
 (async () => {
@@ -74,9 +73,13 @@ const showCameraProduct = async (camera) => {
 
 const addToCart = async () => {
   const camera = await getCameraProduct();
-  let product;
+  let product, cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart == null) {cart = []}
+  console.log(cart);
+  let foundProduct = cart.find((element) => element.id == camera._id);
+  console.log(foundProduct);
 
-  if (JSON.parse(localStorage.getItem(`${camera._id}`)) === null) {
+  if (cart.length == 0) {
     product = {
       img: camera.imageUrl,
       name: camera.name,
@@ -84,14 +87,24 @@ const addToCart = async () => {
       price: camera.price / 100,
       quantity: 1,
     };
+    cart.push(product);
   } else {
-    product = JSON.parse(localStorage.getItem(`${camera._id}`));
-    if (product.quantity < 99) {
-      product.quantity += 1;
+    if (foundProduct != undefined) {
+      if (foundProduct.quantity < 99) {
+        foundProduct.quantity += 1;
+      }
+    } else {
+      product = {
+        img: camera.imageUrl,
+        name: camera.name,
+        id: camera._id,
+        price: camera.price / 100,
+        quantity: 1,
+      };
+      cart.push(product);
     }
   }
-
-  localStorage.setItem(`${camera._id}`, JSON.stringify(product));
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const buy = () => {

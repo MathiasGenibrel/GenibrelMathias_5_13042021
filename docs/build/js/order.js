@@ -12,7 +12,7 @@ const displayOrder = () => {
   `
   <h3 class="title">Merci de votre commande ${capitalize(contact.firstName)} !</h3>
   <p class="order">Votre numéro de commande : <span class="order__id">${orderId}</span></p>
-  <p class="text">Tout ceci arriveras bientôt à ${capitalize(contact.city)} !</p>
+  <p class="text">Tout ceci arrivera bientôt à ${capitalize(contact.city)} !</p>
   <h3 class="title">À bientôt !</h3>
   `
 }

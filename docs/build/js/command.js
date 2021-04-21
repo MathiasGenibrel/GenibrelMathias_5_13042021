@@ -8,14 +8,11 @@ const submitInfo = async() => {
     city: userInput[3].value.toLowerCase(),
     email: userInput[4].value.toLowerCase(),
   };
-  const productCart = Object.keys(localStorage);
+  const productCart = JSON.parse(localStorage.getItem("cart"));
   const products = [];
   for (element of productCart) {
-    let product = JSON.parse(localStorage.getItem(element));
-    products.push(product.id);
+    products.push(element.id);
   }
-  console.log(contact);
-  console.log(products);
 
   orderIdMemomry(await postAPI(contact, products));
 };
