@@ -9,52 +9,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
     <title>Orinolens</title>
+    <meta name="description" content="OrinoLens trouvez votre appareil photo vintage au meilleurs prix !">
 </head>
-<body>
-    <header class="header">
-        <h1 class="header__title">Orinolens</h1>
-        <a class="header__user header__user--avatar" href="#">
-            <i class="header__user__icon far fa-user"></i>
-        </a>
-    </header>
-    <main>
-        <div class="ad">
-            <h2 class="ad__title">L'appareil du moment !<i class="ad__title--logo fas fa-burn"></i></h2>
-            <p class="ad__subtitle">Franck JS 105</p>
-            <img class="ad__img" src="./images/img_without_background/5be9bc241c9d440000a730e7.png" alt="Appareil photo du moment">
-            <div class="ad__price">
-                <i class="ad__price__cart-logo fas fa-shopping-cart"></i>
-                <span class="ad__price__text">2099.00€</span>
+    <body>
+        <header class="header">
+            <h1 class="header__title">Orinolens</h1>
+            <a class="header__user header__user--avatar" title="Connection" href="#">
+                <i class="header__user__icon far fa-user"></i>
+            </a>
+        </header>
+        <main>
+            <div class="ad">
+                <h2 class="ad__title">L'appareil du moment !<i class="ad__title--logo fas fa-burn"></i></h2>
+                <p class="ad__subtitle">Franck JS 105</p>
+                <img class="ad__img" src="./images/img_without_background/5be9bc241c9d440000a730e7.png" alt="Appareil photo du moment">
+                <div class="ad__price">
+                    <i class="ad__price__cart-logo fas fa-shopping-cart"></i>
+                    <span class="ad__price__text">2099.00€</span>
+                </div>
             </div>
-        </div>
-        <div class="camera">
-            <div class="camera__group-name">
-                <h3 class="camera__group-name__title">Appareils photos</h3>
-                <select class="camera__group-name__sort" name="sort" id="">
-                    <option value="popular">Populaire</option>
-                    <option value="price--less-more">Prix croissant</option>
-                    <option value="price--more-less">Prix décroissant</option>
-                </select>
+            <div class="camera">
+                <div class="camera__group-name">
+                    <h3 class="camera__group-name__title">Appareils photos</h3>
+                    <select class="camera__group-name__sort" name="sort" id="">
+                        <option value="popular">Populaire</option>
+                        <option value="price--less-more">Prix croissant</option>
+                        <option value="price--more-less">Prix décroissant</option>
+                    </select>
+                </div>
+                <div class="camera__item" id="camera__item">
+                </div>
             </div>
-            <div class="camera__item" id="camera__item">
-            </div>
-        </div>
-    </main>
-    <footer class="footer">
-        <a class="footer__navigation" href="./index.html">
-            <i class="footer__navigation__icon  footer__navigation__icon--checked fas fa-home"></i>
-        </a>
-        <a class="footer__navigation" href="#">
-            <i class="footer__navigation__icon fas fa-cog"></i>
-        </a>
-        <a class="footer__navigation" href="#">
-            <i class="footer__navigation__icon fas fa-comment-alt"></i>
-        </a>
-        <a class="footer__navigation" href="./docs/src/cart.html">
-            <i class="footer__navigation__icon fas fa-shopping-cart"></i>
-        </a>
-    </footer>
-    <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
-    <script src="./docs/build/js/index.js"></script>
-</body>
+        </main>
+        <footer class="footer">
+            <a class="footer__navigation" title="Home" href="./index.html">
+                <i class="footer__navigation__icon  footer__navigation__icon--checked fas fa-home"></i>
+            </a>
+            <a class="footer__navigation" title="Paramètre" href="#">
+                <i class="footer__navigation__icon fas fa-cog"></i>
+            </a>
+            <a class="footer__navigation" title="Aide" href="#">
+                <i class="footer__navigation__icon fas fa-comment-alt"></i>
+            </a>
+            <a class="footer__navigation" title="Panier" href="./docs/src/cart.html">
+                <i class="footer__navigation__icon fas fa-shopping-cart"></i>
+            </a>
+        </footer>
+        <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
+        <script type="module" src="./docs/build/js/index.js"></script>
+    </body>
 </html>

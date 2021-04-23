@@ -1,7 +1,4 @@
-const ratingProduct = (rating) => {
-  rating = Number.parseFloat((Math.random() * 5).toFixed(1));
-  return rating;
-};
+import { ratingScore } from "./ratingScore.js";
 
 const getCameraProduct = async () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -10,7 +7,7 @@ const getCameraProduct = async () => {
   if (productId === null) {
     window.location.replace("../../index.html");
   }
-  response = await fetch(`http://localhost:3000/api/cameras/${productId}`);
+  const response = await fetch(`http://localhost:3000/api/cameras/${productId}`);
 
   return response.json();
 };
@@ -18,7 +15,7 @@ const getCameraProduct = async () => {
 const showCameraProduct = async (camera) => {
   camera = await camera;
 
-  document.title += ` ${camera.name}`;
+  document.title += `${camera.name}`;
 
   const cameraProduct = document.querySelector("#product");
 
@@ -29,7 +26,7 @@ const showCameraProduct = async (camera) => {
     <div class="product__sheet">
       <div class="product__sheet__name-id">
         <select class="product__sheet__name-id__lenses" name="sort" id="product__sheet__name-id__lenses">
-          
+          ${camera.lenses.map(lense => `<option>${lense}</option>`)}
         </select>
         <h1 class="product__sheet__name-id__title">${camera.name}</h1>
         <p class="product__sheet__name-id__subtitle">ID : ${camera._id}</p>
@@ -44,69 +41,48 @@ const showCameraProduct = async (camera) => {
         <div class="product__sheet__info__price-rating">
           <i class="product__sheet__info__price-rating__icon fas fa-star"></i>
           <h2 class="product__sheet__info__price-rating__title">Notes</h2>
-          <p class="product__sheet__info__price-rating__subtitle">${ratingProduct()}</p>
+          <p class="product__sheet__info__price-rating__subtitle">${ratingScore()}</p>
         </div>
       </div>
       <div class="product__sheet__shopping">
-        <button class="product__sheet__shopping__add-cart" onclick="addToCart()">
+        <button class="product__sheet__shopping__add-cart" id="add-to-cart">
           <p class="product__sheet__shopping__add-cart__text">Ajouter au panier</p>
           <i class="product__sheet__shopping__add-cart__icon fas fa-shopping-cart"></i>
         </button>
-        <button class="product__sheet__shopping__buy" id="buy" onclick="buy(addToCart())">
+        <button class="product__sheet__shopping__buy" id="buy">
           <p class="product__sheet__shopping__buy__text">Acheter</p>
         </button>
       </div>
     </div>
     `;
-  let cameraLens = document.querySelector("#product__sheet__name-id__lenses");
+    document.querySelector("#add-to-cart").addEventListener("click", addToCart);
+    document.querySelector("#buy").addEventListener("click", buy);
+};
 
-  for (lense of camera.lenses) {
-    cameraLens.innerHTML += `
-          <option>${lense}</option>
-      `;
-  }
+const addToCart = async () => {
+  const camera = await getCameraProduct();
+
+  const cart = JSON.parse(localStorage.getItem("cart")) ?? [];
+  const isFoundProduct = cart.find((element) => element.id == camera._id);
+  if (cart.indexOf(isFoundProduct) != -1) cart.splice(cart.indexOf(isFoundProduct), 1);
+
+  cart.push({
+    img: camera.imageUrl,
+    name: camera.name,
+    id: camera._id,
+    price: camera.price / 100,
+    quantity: isFoundProduct ? ++isFoundProduct.quantity : 1,
+  });
+
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+const buy = async () => {
+  await addToCart();
+  window.location.replace("./cart.html");
 };
 
 (async () => {
   await showCameraProduct(await getCameraProduct());
 })();
-
-const addToCart = async () => {
-  const camera = await getCameraProduct();
-  let product, cart = JSON.parse(localStorage.getItem("cart"));
-  if (cart == null) {cart = []}
-  console.log(cart);
-  let foundProduct = cart.find((element) => element.id == camera._id);
-  console.log(foundProduct);
-
-  if (cart.length == 0) {
-    product = {
-      img: camera.imageUrl,
-      name: camera.name,
-      id: camera._id,
-      price: camera.price / 100,
-      quantity: 1,
-    };
-    cart.push(product);
-  } else {
-    if (foundProduct != undefined) {
-      if (foundProduct.quantity < 99) {
-        foundProduct.quantity += 1;
-      }
-    } else {
-      product = {
-        img: camera.imageUrl,
-        name: camera.name,
-        id: camera._id,
-        price: camera.price / 100,
-        quantity: 1,
-      };
-      cart.push(product);
-    }
-  }
-  localStorage.setItem("cart", JSON.stringify(cart));
-};
-
-const buy = () => {
-  window.location.replace("./cart.html");
-};

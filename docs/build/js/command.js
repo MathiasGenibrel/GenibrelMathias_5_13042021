@@ -1,12 +1,10 @@
-const submitInfo = async() => {
-  const userInput = document.querySelectorAll(".form__input");
-
+const submitInfo = async () => {
   const contact = {
-    firstName: userInput[0].value.toLowerCase(),
-    lastName: userInput[1].value.toLowerCase(),
-    address: userInput[2].value.toLowerCase(),
-    city: userInput[3].value.toLowerCase(),
-    email: userInput[4].value.toLowerCase(),
+    firstName: document.querySelector("#firstname").value.toLowerCase(),
+    lastName: document.querySelector("#name").value.toLowerCase(),
+    address: document.querySelector("#adress").value.toLowerCase(),
+    city: document.querySelector("#city").value.toLowerCase(),
+    email: document.querySelector("#email").value.toLowerCase(),
   };
   const productCart = JSON.parse(localStorage.getItem("cart"));
   const products = [];
@@ -14,10 +12,10 @@ const submitInfo = async() => {
     products.push(element.id);
   }
 
-  orderIdMemomry(await postAPI(contact, products));
+  return orderIdMemomry(await postAPI(contact, products));
 };
 
-const postAPI = async(contact, products) => {
+const postAPI = async (contact, products) => {
   const response = await fetch("http://localhost:3000/api/cameras/order", {
     method: "POST",
     headers: {
@@ -26,10 +24,13 @@ const postAPI = async(contact, products) => {
     body: JSON.stringify({ contact, products }),
   });
 
+  console.log(response);
   return response.json();
 };
 
 const orderIdMemomry = (resApi) => {
+
+  console.log("YES PAPA")
   localStorage.setItem("contact", JSON.stringify(resApi.contact));
   localStorage.setItem("orderId", JSON.stringify(resApi.orderId));
 };

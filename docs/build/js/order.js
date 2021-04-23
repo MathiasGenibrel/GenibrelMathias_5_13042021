@@ -1,23 +1,21 @@
-const capitalize = (name) => {
-  return name.charAt(0).toUpperCase() + name.slice(1);
-}
-
 const displayOrder = () => {
-  contact = JSON.parse(localStorage.getItem("contact"))
-  console.log(contact)
-  orderId = JSON.parse(localStorage.getItem("orderId"))
-  console.log(orderId);
+  const capitalize = (name) => {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
 
-  document.querySelector("main").innerHTML = 
-  `
+  contact = JSON.parse(localStorage.getItem("contact"));
+  orderId = JSON.parse(localStorage.getItem("orderId"));
+
+  document.querySelector("main").innerHTML = `
   <h3 class="title">Merci de votre commande ${capitalize(contact.firstName)} !</h3>
   <p class="order">Votre numéro de commande : <span class="order__id">${orderId}</span></p>
   <p class="text">Tout ceci arrivera bientôt à ${capitalize(contact.city)} !</p>
   <h3 class="title">À bientôt !</h3>
-  `
-}
-displayOrder();
+  `;
 
-const clearStorage = () => {
-  localStorage.clear();
-}
+  (() => {
+    localStorage.clear();
+  })();
+};
+
+displayOrder();
