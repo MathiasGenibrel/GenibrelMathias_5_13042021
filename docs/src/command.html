@@ -21,14 +21,13 @@
       </a>
     </header>
     <main>
-      <form class="form" id="form" name="userInput" onsubmit="return(submitInfo())" >
+      <form class="form" id="form" action="./order.html" onsubmit="submitInfo(); return false;" name="userInput">
         <label class="form__name" for="firstname">Prénom :</label>
         <input
           class="form__input"
           id="firstname"
           type="text"
           pattern="[a-zA-Z -]*"
-          value="OUI"
           placeholder="Prénom"
           oninvalid="this.setCustomValidity('Veillez saisir votre Prénom')"
           oninput="this.setCustomValidity('')"
@@ -40,7 +39,6 @@
           id="name"
           type="text"
           pattern="[a-zA-Z -]*"
-          value="OUI"
           oninvalid="this.setCustomValidity('Veillez saisir votre Nom')"
           oninput="this.setCustomValidity('')"
           placeholder="Nom"
@@ -52,7 +50,6 @@
           id="adress"
           type="text"
           pattern="[a-zA-Z0-9 -]*"
-          value="OUI"
           oninvalid="this.setCustomValidity('Veillez saisir votre Adresse')"
           oninput="this.setCustomValidity('')"
           placeholder="Adresse"
@@ -64,7 +61,6 @@
           id="city"
           type="text"
           pattern="[a-zA-Z -]*"
-          value="OUI"
           oninvalid="this.setCustomValidity('Veillez saisir votre Ville')"
           oninput="this.setCustomValidity('')"
           placeholder="Ville"
@@ -76,7 +72,6 @@
           id="email"
           type="email"
           name="email"
-          value="OUI@gmail.com"
           oninvalid="this.setCustomValidity('Votre adresse email doit correspondre à ce format : exemple@gmail.com')"
           oninput="this.setCustomValidity('')"
           placeholder="exemple@gmail.com"

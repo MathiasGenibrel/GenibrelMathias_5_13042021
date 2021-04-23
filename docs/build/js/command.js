@@ -12,7 +12,8 @@ const submitInfo = async () => {
     products.push(element.id);
   }
 
-  return orderIdMemomry(await postAPI(contact, products));
+  orderIdMemomry(await postAPI(contact, products));
+  window.location.replace("./order.html")
 };
 
 const postAPI = async (contact, products) => {
@@ -29,8 +30,6 @@ const postAPI = async (contact, products) => {
 };
 
 const orderIdMemomry = (resApi) => {
-
-  console.log("YES PAPA")
   localStorage.setItem("contact", JSON.stringify(resApi.contact));
   localStorage.setItem("orderId", JSON.stringify(resApi.orderId));
 };
