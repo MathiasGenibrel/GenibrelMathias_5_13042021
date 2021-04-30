@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="docs/build/css/reset.css">
-    <link rel="stylesheet" href="docs/build/css/index.css">
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/index.css">
     <link rel="icon" href="./docs/src/img/OrinoLens.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
             <div class="ad">
                 <h2 class="ad__title">L'appareil du moment !<i class="ad__title--logo fas fa-burn"></i></h2>
                 <p class="ad__subtitle">Franck JS 105</p>
-                <img class="ad__img" src="./images/img_without_background/5be9bc241c9d440000a730e7.png" alt="Appareil photo du moment">
+                <img class="ad__img" src="../../images/img_without_background/5be9bc241c9d440000a730e7.png" alt="Appareil photo du moment">
                 <div class="ad__price">
                     <i class="ad__price__cart-logo fas fa-shopping-cart"></i>
                     <span class="ad__price__text">2099.00€</span>
@@ -45,17 +45,11 @@
             <a class="footer__navigation" title="Home" href="./index.html">
                 <i class="footer__navigation__icon  footer__navigation__icon--checked fas fa-home"></i>
             </a>
-            <a class="footer__navigation" title="Paramètre" href="#">
-                <i class="footer__navigation__icon fas fa-cog"></i>
-            </a>
-            <a class="footer__navigation" title="Aide" href="#">
-                <i class="footer__navigation__icon fas fa-comment-alt"></i>
-            </a>
-            <a class="footer__navigation" title="Panier" href="./docs/src/cart.html">
-                <i class="footer__navigation__icon fas fa-shopping-cart"></i>
+            <a class="footer__navigation" title="Panier" href="../src/pages/cart.html">
+                <i class="footer__navigation__icon fas fa-shopping-cart" id="number__object__cart"></i>
             </a>
         </footer>
         <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
-        <script type="module" src="./docs/build/js/index.js"></script>
+        <script type="module" src="../src/js/index.js"></script>
     </body>
 </html>

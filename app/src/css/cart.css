@@ -9,6 +9,11 @@
   row-gap: 1rem;
   border-radius: 1rem;
 }
+.cart__empty {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
 .cart__price {
   font-size: .8rem;
   color: var(--third-color);

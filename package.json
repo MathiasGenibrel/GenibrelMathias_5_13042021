@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start:api": "node server.js",
-    "start:app": "http-server . --port 4000"
+    "start:app": "http-server ./app/public --port 4000"
   },
   "author": "",
   "license": "ISC",
@@ -14,3 +14,4 @@
     "uuid": "^3.3.2"
   }
 }
+

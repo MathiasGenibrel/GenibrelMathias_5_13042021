@@ -73,19 +73,26 @@ const displayProduct = () => {
   }
 };
 
-displayProduct();
+const displayEmptyCart = () => {
+  document.querySelector("#cart").innerHTML = `
+  <p class="cart__empty">Votre panier est vide !</p>
+  `;
+};
+
+if (JSON.parse(localStorage.getItem("cart")).length === 0) displayEmptyCart();
+if (JSON.parse(localStorage.getItem("cart")).length !== 0) displayProduct();
 
 const removeProduct = (idProduct) => {
   let foundProduct = PRODUCT_CART.find((element) => element.id == idProduct);
-  let indexProduct = PRODUCT_CART.indexOf(foundProduct)
-  console.log(indexProduct)
+  let indexProduct = PRODUCT_CART.indexOf(foundProduct);
   PRODUCT_CART.splice(indexProduct, 1);
-  console.log(PRODUCT_CART)
-  
+
   localStorage.setItem("cart", JSON.stringify(PRODUCT_CART));
 
   let productCardDisplay = document.querySelector("#cart__product__" + idProduct);
   productCardDisplay.remove();
+
+  if (JSON.parse(localStorage.getItem("cart")).length === 0) return displayEmptyCart();
   displayQuantityGlobal();
 };
 
@@ -93,9 +100,8 @@ const addProductQuantity = (idProduct) => {
   let foundProduct = PRODUCT_CART.find((element) => element.id == idProduct);
 
   foundProduct.quantity += 1;
-  if (foundProduct.quantity > 99) {
-    foundProduct.quantity = 99;
-  }
+  if (foundProduct.quantity > 99) foundProduct.quantity = 99;
+
   localStorage.setItem("cart", JSON.stringify(PRODUCT_CART));
   displayQuantityInput(idProduct);
 };
@@ -104,9 +110,8 @@ const deductProductQuantity = (idProduct) => {
   let foundProduct = PRODUCT_CART.find((element) => element.id == idProduct);
 
   foundProduct.quantity -= 1;
-  if (foundProduct.quantity < 1) {
-    foundProduct.quantity = 1;
-  }
+  if (foundProduct.quantity < 1) foundProduct.quantity = 1;
+
   localStorage.setItem("cart", JSON.stringify(PRODUCT_CART));
   displayQuantityInput(idProduct);
 };
@@ -115,11 +120,9 @@ const quantityInput = (idProduct) => {
   let foundProduct = PRODUCT_CART.find((element) => element.id == idProduct);
 
   productSelect = document.querySelector(`#product__quantity__${idProduct}`);
-  if (Number(productSelect.value) > 99) {
-    productSelect.value = 99;
-  } else if (Number(productSelect.value) < 1) {
-    productSelect.value = 1;
-  }
+  if (Number(productSelect.value) > 99) productSelect.value = 99;
+  if (Number(productSelect.value) < 1) productSelect.value = 1;
+
   foundProduct.quantity = Number(productSelect.value);
 
   localStorage.setItem("cart", JSON.stringify(PRODUCT_CART));

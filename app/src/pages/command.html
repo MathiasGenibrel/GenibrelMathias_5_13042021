@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../build/css/reset.css" />
-    <link rel="stylesheet" href="../build/css/command.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/command.css" />
     <link rel="icon" href="./img/OrinoLens.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -27,9 +27,10 @@
           class="form__input"
           id="firstname"
           type="text"
-          pattern="[a-zA-Z -]*"
+          name="firsname"
+          pattern="^[a-zA-Z0-9 -]{2,}$"
           placeholder="Prénom"
-          oninvalid="this.setCustomValidity('Veillez saisir votre Prénom')"
+          oninvalid="this.setCustomValidity('Veuillez saisir votre Prénom')"
           oninput="this.setCustomValidity('')"
           required
         />
@@ -38,8 +39,9 @@
           class="form__input"
           id="name"
           type="text"
-          pattern="[a-zA-Z -]*"
-          oninvalid="this.setCustomValidity('Veillez saisir votre Nom')"
+          name="name"
+          pattern="^[a-zA-Z0-9 -]{2,}$"
+          oninvalid="this.setCustomValidity('Veuillez saisir votre Nom')"
           oninput="this.setCustomValidity('')"
           placeholder="Nom"
           required
@@ -49,8 +51,9 @@
           class="form__input"
           id="adress"
           type="text"
+          name="adress"
           pattern="[a-zA-Z0-9 -]*"
-          oninvalid="this.setCustomValidity('Veillez saisir votre Adresse')"
+          oninvalid="this.setCustomValidity('Veuillez saisir votre Adresse')"
           oninput="this.setCustomValidity('')"
           placeholder="Adresse"
           required
@@ -60,8 +63,9 @@
           class="form__input"
           id="city"
           type="text"
+          name="city"
           pattern="[a-zA-Z -]*"
-          oninvalid="this.setCustomValidity('Veillez saisir votre Ville')"
+          oninvalid="this.setCustomValidity('Veuillez saisir votre ville')"
           oninput="this.setCustomValidity('')"
           placeholder="Ville"
           required
@@ -81,6 +85,6 @@
       </form>
     </main>
     <script src="https://kit.fontawesome.com/5ac9fa6632.js" crossorigin="anonymous"></script>
-    <script src="../build/js/command.js"></script>
+    <script src="../js/command.js"></script>
   </body>
 </html>

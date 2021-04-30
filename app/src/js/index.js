@@ -1,4 +1,9 @@
 import { ratingScore } from "./ratingScore.js";
+import { numberObjectCart } from "./numberObjectCart.js";
+
+if (JSON.parse(localStorage.getItem("cart")) == null) localStorage.setItem("cart", JSON.stringify([]));
+
+numberObjectCart();
 
 const getCameraProduct = async () => {
   const response = await fetch(`http://localhost:3000/api/cameras`);
@@ -13,7 +18,7 @@ const showCameraProduct = async (cameras) => {
     const cameraProductsList = document.querySelector("#camera__item");
 
     cameraProductsList.innerHTML += `
-        <a class="camera__item__product" href="./docs/src/product.html?id=${camera._id}">
+        <a class="camera__item__product" href="../src/pages/product.html?id=${camera._id}">
           <img class="camera__item__product__img" src="${camera.imageUrl}" alt="Appareil photo id:${camera._id}">
           <h4 class="camera__item__product__title">${camera.name}</h4>
           <p class="camera__item__product__price">${camera.price / 100 + " €"}</p>
