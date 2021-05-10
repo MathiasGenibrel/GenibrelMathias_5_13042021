@@ -63,7 +63,6 @@ const showCameraProduct = async (camera) => {
       </div>
     </div>
     `;
-  //document.querySelector("#product__sheet__shopping__quantity__input-more").addEventListener("click", addProductQuantity);
   document.querySelector("#add-to-cart").addEventListener("click", addToCart);
   document.querySelector("#buy").addEventListener("click", buy);
   displayQuantityInput();
